@@ -1,4 +1,26 @@
 
+let answer;
+
+const btnRock = document.querySelector("#btnRock");
+btnRock.addEventListener("click", () => {
+rockSelection();
+playRound();
+});
+
+const btnPaper = document.querySelector("#btnPaper");
+btnPaper.addEventListener("click", () => {
+  paperSelection();
+  playRound();
+});
+
+const btnScissors = document.querySelector("#btnScissors");
+btnScissors.addEventListener("click", () => {
+  scissorsSelection();
+  playRound();
+});
+
+
+
 function getComputerChoice(){
     let number=Math.floor(Math.random()*3);
     if (number===0) {
@@ -10,21 +32,31 @@ function getComputerChoice(){
     };
 };
 
+function rockSelection() {
+  answer = "Rock";
+};
+
+function paperSelection() {
+  answer = "Paper";
+};
+
+function scissorsSelection () {
+  answer = "Scissors";
+};
+
 function getPlayerChoice() {
-   let answer = prompt("Choose Rock, Paper or Scissors:", "You didnt choose anything..");
    if (answer == undefined || null || "") {
      return "You didnt choose anything..";
     } else {
-    let caseInsensitiveAnswer = answer.toUpperCase();
-    if (caseInsensitiveAnswer === "ROCK") {
-      return "You've chosen Rock!";
-    } else if (caseInsensitiveAnswer === "PAPER") {
+    if ( answer === "Rock") {
+      return ("You've chosen Rock!");
+    } else if (answer === "Paper") {
       return "You've chosen Paper!";
-    } else if (caseInsensitiveAnswer === "SCISSORS") {
+    } else if (answer === "Scissors") {
       return "You've chosen Scissors!";
     } else {
       return "Try again!";
-    }
+    };
     };
 };
 
