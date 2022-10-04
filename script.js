@@ -1,6 +1,9 @@
 
 let answer;
 
+const compChoiceImg = document.querySelector(".compImg");
+const playerChoiceImg = document.querySelector(".playerImg");
+
 const btnRock = document.querySelector("#btnRock");
 btnRock.addEventListener("click", () => {
 rockSelection();
@@ -30,12 +33,15 @@ function getComputerChoice(){
     let number=Math.floor(Math.random()*3);
     if (number===0) {
         compSelText.textContent = "Computer's choice is: Rock.";
+        compChoiceImg.src = "/images/rock-cat.png";
         return "Computer's choice is: Rock.";
     } else if (number===1) {
       compSelText.textContent = "Computer's choice is: Paper.";
-       return "Computer's choice is: Paper.";
+      compChoiceImg.src = "/images/paper-cat.png";
+      return "Computer's choice is: Paper.";
     } else if (number===2) {
       compSelText.textContent =  "Computer's choice is: Scissors.";
+      compChoiceImg.src = "/images/scissors-cat.png";
        return "Computer's choice is: Scissors.";
     };
 };
@@ -58,12 +64,15 @@ function getPlayerChoice() {
     } else {
     if ( answer === "Rock") {
       playerSelTexr.textContent = "You've chosen Rock!";
+      playerChoiceImg.src = "/images/rock-cat.png";
       return ("You've chosen Rock!");
     } else if (answer === "Paper") {
       playerSelTexr.textContent = "You've chosen Paper!";
+      playerChoiceImg.src = "/images/paper-cat.png";
       return "You've chosen Paper!";
     } else if (answer === "Scissors") {
       playerSelTexr.textContent = "You've chosen Scissors!";
+      playerChoiceImg.src = "/images/scissors-cat.png";
       return "You've chosen Scissors!";
     } else {
       return "Try again!";
