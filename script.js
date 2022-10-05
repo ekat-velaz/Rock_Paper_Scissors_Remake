@@ -64,15 +64,15 @@ function getPlayerChoice() {
     } else {
     if ( answer === "Rock") {
       playerSelTexr.textContent = "You've chosen Rock!";
-      playerChoiceImg.src = "/images/rock-cat.png";
+      playerChoiceImg.src = "/images/rock.png";
       return ("You've chosen Rock!");
     } else if (answer === "Paper") {
       playerSelTexr.textContent = "You've chosen Paper!";
-      playerChoiceImg.src = "/images/paper-cat.png";
+      playerChoiceImg.src = "/images/paper.png";
       return "You've chosen Paper!";
     } else if (answer === "Scissors") {
       playerSelTexr.textContent = "You've chosen Scissors!";
-      playerChoiceImg.src = "/images/scissors-cat.png";
+      playerChoiceImg.src = "/images/scissors.png";
       return "You've chosen Scissors!";
     } else {
       return "Try again!";
