@@ -3,6 +3,15 @@ let answer;
 
 const compChoiceImg = document.querySelector(".compImg");
 const playerChoiceImg = document.querySelector(".playerImg");
+const finalResultImg = document.querySelector(".resultImg");
+
+const resultsBoard = document.querySelector(".results");
+
+const btnStart = document.querySelector("#btnStart");
+btnStart.addEventListener("click", () => {
+startAgain();
+location.reload();
+});
 
 const btnRock = document.querySelector("#btnRock");
 btnRock.addEventListener("click", () => {
@@ -32,19 +41,26 @@ let finalResText = document.querySelector(".finalResult");
 function getComputerChoice(){
     let number=Math.floor(Math.random()*3);
     if (number===0) {
-        compSelText.textContent = "Computer's choice is: Rock.";
+        compSelText.textContent = "Kitten's choice is: Rock.";
         compChoiceImg.src = "/images/rock-cat.png";
         return "Computer's choice is: Rock.";
     } else if (number===1) {
-      compSelText.textContent = "Computer's choice is: Paper.";
+      compSelText.textContent = "Kitten's choice is: Paper.";
       compChoiceImg.src = "/images/paper-cat.png";
       return "Computer's choice is: Paper.";
     } else if (number===2) {
-      compSelText.textContent =  "Computer's choice is: Scissors.";
+      compSelText.textContent =  "Kitten's choice is: Scissors.";
       compChoiceImg.src = "/images/scissors-cat.png";
        return "Computer's choice is: Scissors.";
     };
 };
+
+function startAgain() {
+   btnRock.hidden = false;
+   btnPaper.hidden = false;
+   btnScissors.hidden = false;
+   btnStart.hidden = true;
+}
 
 function rockSelection() {
   answer = "Rock";
@@ -87,9 +103,21 @@ let computerScore = 0;
 let playerScore = 0;
 let finalResult;
 
+playerSelTexr.hidden = true;
+playerScoreText.hidden = true;
+compScoreText.hidden = true;
+compSelText.hidden = true;
+btnStart.hidden = true;
+resultsBoard.hidden = true;
 
 function playRound (computerChoice , playerChoice) {
-  compScoreText.textContent = `Computer score is: ${computerScore}.`;
+  btnStart.hidden = true;
+  playerSelTexr.hidden = false;
+  playerScoreText.hidden = false;
+  compScoreText.hidden = false;
+  compSelText.hidden = false;
+  resultsBoard.hidden = false;
+  compScoreText.textContent = `Kitten's score is: ${computerScore}.`;
   playerScoreText.textContent = `Your score is: ${playerScore}`;
     computerChoice = getComputerChoice();
     playerChoice = getPlayerChoice();
@@ -121,7 +149,6 @@ function playRound (computerChoice , playerChoice) {
     } else {
          roundResult = "Try again!";
     };
-    
     countScore();
     getFinalResult();
 };
@@ -132,20 +159,30 @@ function countScore() {
    } else if (roundResult == "You lost! Paper beats Rock." || roundResult == "You lost! Scissors beats Paper!" || roundResult == "You lost! Rock beats Scissors.") {
     computerScore = ++computerScore;
    }; 
-   compScoreText.textContent = `Computer score is: ${computerScore}.`;
+   compScoreText.textContent = `Kitten's score is: ${computerScore}`;
    playerScoreText.textContent = `Your score is: ${playerScore}`;
+   
 };
 
 function getFinalResult() {
   if (computerScore === 5 || playerScore === 5) {
   if (computerScore > playerScore) {
-    finalResult = "Sorry.. Computer beaten you in this game."
+    finalResult = "Sorry.. Kitten beaten you in this game."
+    roundResText.textContent = "";
+    finalResultImg.src = "/images/cool-cat.jpg";
    } else if (computerScore < playerScore) {
-    finalResult = "Yay! You won completely!";
+    finalResult = "Yay! You won completely! But at what cost..";
+    roundResText.textContent = "";
+    finalResultImg.src = "/images/crying-cat.jpg";
    } else if (computerScore == playerScore){
-     finalResult = "Haha lol its a tie!";
+     finalResult = "Haha lol its a tie! Try again now because kitty is bored.";
+     roundResText.textContent = "";
+     finalResultImg.src = "/images/cat-standing.jpeg";
    };
    finalResText.textContent = `${finalResult}`;
-  };
+   btnRock.hidden = true;
+   btnPaper.hidden = true;
+   btnScissors.hidden = true;
+   btnStart.hidden = false;
 };
-
+};

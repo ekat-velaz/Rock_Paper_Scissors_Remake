@@ -22,6 +22,12 @@ body {
 
 .compImg {
 max-height: 300px;
+
+}
+
+.resultImg {
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .playerImg {
@@ -43,6 +49,10 @@ h1, h2, h3 {
     color: #27343A;
 }
 
+h1 {
+    font-size: 50px;
+}
+
 button {
     background-color: #829FAB;
     border-style: ridge;
@@ -54,6 +64,7 @@ button {
     height:70px;
     border-radius: 10px;
    padding: 5px;
+
 }
 
 button:hover {
@@ -78,6 +89,8 @@ button:hover {
     border-width: 10px;
     border-color: #53707B;
     border-radius: 10px;
+    width:300px;
+    text-align: center;
 }
 
 .playerChoice, .playerScore, .computerChoice, .computerScore {
@@ -90,4 +103,20 @@ button:hover {
     border-width: 5px;
     border-color: #53707B;
     border-radius: 10px;
+    width:300px;
+    height:20px;
+    text-align: center;
+}
+
+.img {
+    height: 300px;
+    width:150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btnStart {
+    width:250px;
+    height:70px;
 }
