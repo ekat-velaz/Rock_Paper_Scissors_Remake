@@ -42,15 +42,15 @@ function getComputerChoice(){
     let number=Math.floor(Math.random()*3);
     if (number===0) {
         compSelText.textContent = "Kitten's choice is: Rock.";
-        compChoiceImg.src = "images/rock-cat.png";
+        compChoiceImg.src = "./images/rock-cat.png";
         return "Computer's choice is: Rock.";
     } else if (number===1) {
       compSelText.textContent = "Kitten's choice is: Paper.";
-      compChoiceImg.src = "images/paper-cat.png";
+      compChoiceImg.src = "./images/paper-cat.png";
       return "Computer's choice is: Paper.";
     } else if (number===2) {
       compSelText.textContent =  "Kitten's choice is: Scissors.";
-      compChoiceImg.src = "images/scissors-cat.png";
+      compChoiceImg.src = "./images/scissors-cat.png";
        return "Computer's choice is: Scissors.";
     };
 };
@@ -80,15 +80,15 @@ function getPlayerChoice() {
     } else {
     if ( answer === "Rock") {
       playerSelTexr.textContent = "You've chosen Rock!";
-      playerChoiceImg.src = "images/rock.png";
+      playerChoiceImg.src = "./images/rock.png";
       return ("You've chosen Rock!");
     } else if (answer === "Paper") {
       playerSelTexr.textContent = "You've chosen Paper!";
-      playerChoiceImg.src = "images/paper.png";
+      playerChoiceImg.src = "./images/paper.png";
       return "You've chosen Paper!";
     } else if (answer === "Scissors") {
       playerSelTexr.textContent = "You've chosen Scissors!";
-      playerChoiceImg.src = "images/scissors.png";
+      playerChoiceImg.src = "./images/scissors.png";
       return "You've chosen Scissors!";
     } else {
       return "Try again!";
@@ -169,15 +169,15 @@ function getFinalResult() {
   if (computerScore > playerScore) {
     finalResult = "Sorry.. Kitten beaten you in this game."
     roundResText.textContent = "";
-    finalResultImg.src = "images/cool-cat.jpg";
+    finalResultImg.src = "./images/cool-cat.jpg";
    } else if (computerScore < playerScore) {
     finalResult = "Yay! You won completely! But at what cost..";
     roundResText.textContent = "";
-    finalResultImg.src = "images/crying-cat.jpg";
+    finalResultImg.src = "./images/crying-cat.jpg";
    } else if (computerScore == playerScore){
      finalResult = "Haha lol its a tie! Try again now because kitty is bored.";
      roundResText.textContent = "";
-     finalResultImg.src = "images/cat-standing.jpeg";
+     finalResultImg.src = "./images/cat-standing.jpeg";
    };
    finalResText.textContent = `${finalResult}`;
    btnRock.hidden = true;
